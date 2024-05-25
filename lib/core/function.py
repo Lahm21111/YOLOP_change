@@ -47,7 +47,6 @@ def train(cfg, train_loader, model, criterion, optimizer, scaler, epoch, num_bat
 
     # switch to train mode
     model.train()
-    start = time.time()
     for i, (input, target, paths, shapes) in enumerate(train_loader):
         intermediate = time.time()
         #print('tims:{}'.format(intermediate-start))
@@ -110,6 +109,7 @@ def train(cfg, train_loader, model, criterion, optimizer, scaler, epoch, num_bat
                 writer.add_scalar('train_loss', losses.val, global_steps)
                 # writer.add_scalar('train_acc', acc.val, global_steps)
                 writer_dict['train_global_steps'] = global_steps + 1
+    start = time.time()
 
 
 def validate(epoch,config, val_loader, val_dataset, model, criterion, output_dir,

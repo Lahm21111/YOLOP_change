@@ -6,7 +6,7 @@ _C = CN()
 
 _C.LOG_DIR = 'runs/'
 _C.GPUS = (0,1)     
-_C.WORKERS = 8
+_C.WORKERS = 0
 _C.PIN_MEMORY = False
 _C.PRINT_FREQ = 20
 _C.AUTO_RESUME =False       # Resume from the last training interrupt
@@ -50,10 +50,10 @@ _C.LOSS.LL_IOU_GAIN = 0.2 # lane line iou loss gain
 
 # DATASET related params
 _C.DATASET = CN(new_allowed=True)
-_C.DATASET.DATAROOT = '/home/zwt/bdd/bdd100k/images/100k'       # the path of images folder
-_C.DATASET.LABELROOT = '/home/zwt/bdd/bdd100k/labels/100k'      # the path of det_annotations folder
-_C.DATASET.MASKROOT = '/home/zwt/bdd/bdd_seg_gt'                # the path of da_seg_annotations folder
-_C.DATASET.LANEROOT = '/home/zwt/bdd/bdd_lane_gt'               # the path of ll_seg_annotations folder
+_C.DATASET.DATAROOT = "C:/Users/grizi/Desktop/TUD/quarter_4/computer_vision/YOLOP/dataset_root/images"       # the path of images folder
+_C.DATASET.LABELROOT = "C:/Users/grizi/Desktop/TUD/quarter_4/computer_vision/YOLOP/dataset_root/det_annotations"     # the path of det_annotations folder
+_C.DATASET.MASKROOT = "C:/Users/grizi/Desktop/TUD/quarter_4/computer_vision/YOLOP/dataset_root/da_seg_annotations"                # the path of da_seg_annotations folder
+_C.DATASET.LANEROOT = "C:/Users/grizi/Desktop/TUD/quarter_4/computer_vision/YOLOP/dataset_root/ll_seg_annotations"              # the path of ll_seg_annotations folder
 _C.DATASET.DATASET = 'BddDataset'
 _C.DATASET.TRAIN_SET = 'train'
 _C.DATASET.TEST_SET = 'val'
@@ -107,7 +107,7 @@ _C.TRAIN.ENC_SEG_ONLY = False       # Only train encoder and two segmentation br
 _C.TRAIN.ENC_DET_ONLY = False       # Only train encoder and detection branch
 
 # Single task 
-_C.TRAIN.DRIVABLE_ONLY = False      # Only train da_segmentation task
+_C.TRAIN.DRIVABLE_ONLY = True      # Only train da_segmentation task
 _C.TRAIN.LANE_ONLY = False          # Only train ll_segmentation task
 _C.TRAIN.DET_ONLY = False          # Only train detection task
 

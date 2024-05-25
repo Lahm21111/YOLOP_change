@@ -35,6 +35,8 @@ def show_seg_result(img, result, index, epoch, save_dir=None, is_ll=False,palett
     assert palette.shape[0] == 3 # len(classes)
     assert palette.shape[1] == 3
     assert len(palette.shape) == 2
+    result_np = np.array(result)
+    print(result_np.shape)
     
     if not is_demo:
         color_seg = np.zeros((result.shape[0], result.shape[1], 3), dtype=np.uint8)
